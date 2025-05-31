@@ -1,15 +1,10 @@
 "use client";
 
 import ThemeToggler from "@/components/theme/toggler";
-import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site.config";
-import { Check, Copy } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
 
 export default function Home() {
-  const [copied2, setCopied2] = useState(false);
-
   return (
     <div className="w-full h-auto md:h-screen overflow-y-auto md:overflow-hidden flex flex-col items-center justify-center">
       <div className="w-full max-w-7xl mx-auto border border-dashed flex flex-col my-2">
