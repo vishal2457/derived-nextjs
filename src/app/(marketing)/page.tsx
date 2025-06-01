@@ -7,23 +7,25 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="w-full h-auto md:h-screen overflow-y-auto md:overflow-hidden flex flex-col items-center justify-center">
-      <div className="w-full max-w-7xl mx-auto border border-dashed flex flex-col my-2">
+      <div className="w-full max-w-7xl mx-auto  flex flex-col my-2">
         <div className="w-full flex justify-between divide-x">
           <div className="flex-1 flex flex-col">
-            <div
-              id="nav"
-              className="w-full flex items-center justify-end border-b border-dashed divide-x"
-            >
+            <div id="nav" className="w-full flex items-center justify-end">
               <div
                 id="brand"
-                className="font-mono text-sm flex-1 flex items-center h-full px-3 border-dashed"
+                className="font-mono text-sm flex-1 flex items-center h-full px-3"
               >
                 <Link href="/" className="hover:underline">
                   {siteConfig.origin.replace("https://", "")}
                 </Link>
               </div>
-
-              <ThemeToggler className="border-dashed size-10 md:size-14" />
+              <Link href="/dashboard" className="">
+                Dashboard
+              </Link>
+              <Link href="/sign-in" className="">
+                Sign In
+              </Link>
+              <ThemeToggler className="size-10 md:size-14" />
             </div>
             <DashedContainer>
               <Link
@@ -42,7 +44,7 @@ export default function Home() {
 
 function DashedContainer({ children }: { children: React.ReactNode }) {
   return (
-    <div className="p-2 border border-dashed hover:border-primary/50 bg-card text-xs md:text-sm flex items-center justify-between transition-all duration-200 delay-75 rounded-md">
+    <div className="p-2  hover:border-primary/50 bg-card text-xs md:text-sm flex items-center justify-between transition-all duration-200 delay-75">
       {children}
     </div>
   );
