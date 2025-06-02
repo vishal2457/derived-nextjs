@@ -10,7 +10,10 @@ export default function Home() {
       <div className="w-full max-w-7xl mx-auto  flex flex-col my-2">
         <div className="w-full flex justify-between divide-x">
           <div className="flex-1 flex flex-col">
-            <div id="nav" className="w-full flex items-center justify-end">
+            <div
+              id="nav"
+              className="w-full flex items-center justify-end gap-4"
+            >
               <div
                 id="brand"
                 className="font-mono text-sm flex-1 flex items-center h-full px-3"
@@ -19,9 +22,7 @@ export default function Home() {
                   {siteConfig.origin.replace("https://", "")}
                 </Link>
               </div>
-              <Link href="/dashboard" className="">
-                Dashboard
-              </Link>
+              <Link href="/dashboard">Dashboard</Link>
               <Link href="/sign-in" className="">
                 Sign In
               </Link>
