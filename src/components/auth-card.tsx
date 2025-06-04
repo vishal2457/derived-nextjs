@@ -26,15 +26,15 @@ export default function AuthCard({
   title: string;
   description: string;
   mode?: "sign-in" | "sign-up";
-}) { 
-  const [githubLoading, setGithubLoading] = useState(false); 
-  const [googleLoading, setGoogleLoading] = useState(false); 
+}) {
+  const [githubLoading, setGithubLoading] = useState(false);
+  const [googleLoading, setGoogleLoading] = useState(false);
   const [discordLoading, setDiscordLoading] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const router = useRouter(); 
+  const router = useRouter();
 
-   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (isLoading) return;
 
@@ -81,119 +81,119 @@ export default function AuthCard({
         }
       );
     }
-  }; 
+  };
   return (
-      <div className="flex justify-center items-center h-screen">
-    <Card className="max-w-md w-full rounded-none border-dashed">
-      <CardHeader>
-        <CardTitle className="text-lg md:text-xl">{title}</CardTitle>
-        <CardDescription className="text-xs md:text-sm">
-          {description}
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
- <form onSubmit={handleSubmit}>
-          <div className="flex flex-col gap-5 my-3">
-            <div className="grid gap-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="hello@example.com"
-                readOnly={isLoading}
-                required
-              />
-            </div>
-            <div className="grid gap-2">
-              <Label htmlFor="password">Password</Label>
-              <Input
-                id="password"
-                name="password"
-                type="password"
-                placeholder="Enter password here"
-                readOnly={isLoading}
-                required
-              />
-            </div>
-            {errorMessage && (
-              <p className="text-red-500 text-sm">{errorMessage}</p>
-            )}
-            <Button
-              type="submit"
-              className="mt-2 w-full"
-              size="lg"
-              disabled={isLoading}
-            >
+    <div className="flex justify-center items-center h-screen">
+      <Card className="max-w-md w-full rounded-none border-dashed">
+        <CardHeader>
+          <CardTitle className="text-lg md:text-xl">{title}</CardTitle>
+          <CardDescription className="text-xs md:text-sm">
+            {description}
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={handleSubmit}>
+            <div className="flex flex-col gap-5 my-3">
+              <div className="grid gap-2">
+                <Label htmlFor="email">Email</Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="hello@example.com"
+                  readOnly={isLoading}
+                  required
+                />
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="password">Password</Label>
+                <Input
+                  id="password"
+                  name="password"
+                  type="password"
+                  placeholder="Enter password here"
+                  readOnly={isLoading}
+                  required
+                />
+              </div>
+              {errorMessage && (
+                <p className="text-red-500 text-sm">{errorMessage}</p>
+              )}
+              <Button
+                type="submit"
+                className="mt-2 w-full"
+                size="lg"
+                disabled={isLoading}
+              >
                 {isLoading && <LoaderCircle className="animate-spin" />}
                 {mode === "sign-in" ? "Sign in" : "Sign up"}
-            </Button>
-          </div>
-        </form>
-      
-        <div className="grid gap-4">
-          <div
-            className={cn(
-              "w-full gap-2 flex items-center",
-              "justify-between flex-col"
-            )}
-          >
-            <SignInButton
-                 title={`${
+              </Button>
+            </div>
+          </form>
+
+          <div className="grid gap-4">
+            <div
+              className={cn(
+                "w-full gap-2 flex items-center",
+                "justify-between flex-col"
+              )}
+            >
+              <SignInButton
+                title={`${
                   mode === "sign-in" ? "Sign in" : "Sign up"
                 } with Github`}
-              provider="github"
-              loading={githubLoading}
-              setLoading={setGithubLoading}
-              callbackURL="/dashboard"
-            /> 
-            <SignInButton
-                 title={`${
+                provider="github"
+                loading={githubLoading}
+                setLoading={setGithubLoading}
+                callbackURL="/dashboard"
+              />
+              <SignInButton
+                title={`${
                   mode === "sign-in" ? "Sign in" : "Sign up"
                 } with Google`}
-              provider="google"
-              loading={googleLoading}
-              setLoading={setGoogleLoading}
-              callbackURL="/dashboard"
-            /> 
-            <SignInButton
-                 title={`${
+                provider="google"
+                loading={googleLoading}
+                setLoading={setGoogleLoading}
+                callbackURL="/dashboard"
+              />
+              <SignInButton
+                title={`${
                   mode === "sign-in" ? "Sign in" : "Sign up"
                 } with Discord`}
-              provider="discord"
-              loading={discordLoading}
-              setLoading={setDiscordLoading}
-              callbackURL="/dashboard"
-            />
+                provider="discord"
+                loading={discordLoading}
+                setLoading={setDiscordLoading}
+                callbackURL="/dashboard"
+              />
+            </div>
           </div>
-        </div>
-      </CardContent>
-      <CardFooter className="flex justify-center border-t border-dashed pt-4">
-        <p className="text-sm text-muted-foreground">
-          {mode === "sign-in" ? (
-            <>
-              Don't have an account?{" "}
-              <Link
-                href="/sign-up"
-                className="text-primary font-medium hover:underline"
-              >
-                Sign up
-              </Link>
-            </>
-          ) : (
-            <>
-              Already have an account?{" "}
-              <Link
-                href="/sign-in"
-                className="text-primary font-medium hover:underline"
-              >
-                Sign in
-              </Link>
-            </>
-          )}
-        </p>
-      </CardFooter>
-    </Card>
+        </CardContent>
+        <CardFooter className="flex justify-center border-t border-dashed pt-4">
+          <p className="text-sm text-muted-foreground">
+            {mode === "sign-in" ? (
+              <>
+                Don&apos;t have an account?{" "}
+                <Link
+                  href="/sign-up"
+                  className="text-primary font-medium hover:underline"
+                >
+                  Sign up
+                </Link>
+              </>
+            ) : (
+              <>
+                Already have an account?{" "}
+                <Link
+                  href="/sign-in"
+                  className="text-primary font-medium hover:underline"
+                >
+                  Sign in
+                </Link>
+              </>
+            )}
+          </p>
+        </CardFooter>
+      </Card>
     </div>
   );
 }
