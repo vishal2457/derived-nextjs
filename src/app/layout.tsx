@@ -48,7 +48,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: siteConfig.socials.x,
     title: siteConfig.title,
     description: siteConfig.description,
     images: {
@@ -59,7 +58,6 @@ export const metadata: Metadata = {
     },
   },
 };
-
 
 export default function RootLayout({
   children,
@@ -76,9 +74,7 @@ export default function RootLayout({
           fontMono.variable
         )}
       >
-        <RootProviders>
-          {children}
-        </RootProviders>
+        <RootProviders>{children}</RootProviders>
       </body>
     </html>
   );

@@ -24,7 +24,7 @@ export default function NotFound() {
           <div className="text-center">
             <h1 className="text-8xl font-bold text-primary mb-4">404</h1>
             <p className="text-xl text-muted-foreground mb-6">
-              Oops! Looks like you've ventured into uncharted territory.
+              Oops! Looks like you&apos;ve ventured into uncharted territory.
             </p>
           </div>
 
@@ -32,14 +32,14 @@ export default function NotFound() {
             <div className="flex items-start space-x-3">
               <span className="text-2xl">🔍</span>
               <p className="text-muted-foreground">
-                The page you're looking for might have been moved, deleted, or
-                never existed.
+                The page you&apos;re looking for might have been moved, deleted,
+                or never existed.
               </p>
             </div>
             <div className="flex items-start space-x-3">
               <span className="text-2xl">💡</span>
               <p className="text-muted-foreground">
-                Don't worry! You can always navigate back to safety.
+                Don&apos;t worry! You can always navigate back to safety.
               </p>
             </div>
           </div>
