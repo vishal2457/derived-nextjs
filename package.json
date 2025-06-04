@@ -10,7 +10,8 @@
     "db:migrate": "bun run src/lib/db/migrate.ts",
     "db:studio": "drizzle-kit studio",
     "lint": "next lint",
-    "db:push": "drizzle-kit push"
+    "db:push": "drizzle-kit push",
+    "playwright:test": "npx playwright test"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
@@ -68,6 +69,7 @@
     "zustand": "^5.0.5"
   },
   "devDependencies": {
+    "@playwright/test": "^1.52.0",
     "@tailwindcss/postcss": "^4.1.6",
     "@tanstack/react-query-devtools": "^5.76.1",
     "@types/node": "^20.17.47",
