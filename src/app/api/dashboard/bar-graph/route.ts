@@ -95,7 +95,7 @@ const chartData = [
     { date: '2024-06-30', desktop: 446, mobile: 400 }
   ];
 
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+export async function GET() {
     // write query for recent sales from db
   return NextResponse.json(chartData);
 }
