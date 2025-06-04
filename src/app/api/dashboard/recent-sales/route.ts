@@ -39,7 +39,7 @@ const salesData = [
   }
 ];
 
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+export async function GET() {
     // write query for recent sales from db
   return NextResponse.json(salesData);
 }
